@@ -1,4 +1,5 @@
 <template>
+
   <div style="width: 100%; display: flex; padding-bottom: 10px; flex-direction: column; align-items: center; justify-content: start; height: calc(100vh - 60px); background: #f2f2f2; overflow: hidden; position: relative;">
     <div class="ticks-header" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 10px 40px 0px 40px; width: 100%;">
       <div class="ticks-header-title" style="font-size: 30px; font-weight: 500; color: #0D0D0D;">
@@ -79,6 +80,7 @@
         </div>
       </div>
     </div>
+    <select-component :totalPages="totalPages" :currentPage.sync="currentPage"/>
   </div>
 </template>
 
@@ -86,13 +88,15 @@
 <script>
 import qs from "qs";
 import ticketSearch from "./components/ticketSearch.vue";
-
+import selectComponent from './components/select-component.vue'
 export default {
   components:{
-    ticketSearch
+    ticketSearch,
+    selectComponent
   },
   data: function () {
     return {
+      totalPages:10,
       activeInput: false,
       rows: 100,
       currentPage: 1,
