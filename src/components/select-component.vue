@@ -37,6 +37,8 @@
         <option value="DE">Germany</option>
       </select>
     </div>
+
+    <font-awesome-icon :icon="['fas', 'user-secret']" />
   </div>
 </template>
 
